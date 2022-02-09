@@ -1,0 +1,13 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{
+	float radio, pi=3.1416;
+	cout<<"Digite el radio: "; cin>>radio;
+	cout<<"El radio es: "<<radio*radio*pi;
+	getch();
+}
