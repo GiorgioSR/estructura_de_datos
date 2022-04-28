@@ -1,0 +1,43 @@
+import os
+
+print ("\nCrear un archivo")
+print ("================")
+
+NOMBRE_ARCHIVO = 'usuario.txt'
+
+archivo = open(NOMBRE_ARCHIVO, 'w') #Abre el archivo datos.txt
+archivo.write("Adriel Tellez\t\t15 Diciembre 1992\tProgramación & Marketing\t3 Estrellas\n")
+archivo.write("Oscar Aguilar\t\t3 Enero 1994\t\tAlgebra & Calculo\t\t4.5 Estrellas\n")
+archivo.write("Francisco Valverde\t6 Mayo 1982\t\tCalculo\t\t\t\t2 Estrellas\n")
+archivo.write("Karim Benzema\t\t5 Febrero 1973\t\tRedes\t\t\t\t5 Estrellas\n")
+archivo.write("Cristiano Ronaldo\t23 Noviembre 1976\tContabilidad de Costos\t\t0 Estrellas\n")
+
+archivo.close()
+
+if NOMBRE_ARCHIVO in os.listdir("."):
+    print ("\nArchivo creado en la ruta: \n\n\t{0}/{1}".format(os.getcwd(), NOMBRE_ARCHIVO))
+else:
+    print ("El archivo no fue creado!!!\n")
+print ("\n\nLeer un archivo")
+print ("===============\n")
+
+archivo = open(NOMBRE_ARCHIVO, 'r')
+contenido = archivo.read()
+print (contenido)
+archivo.close()
+
+print ("\n\nIterar sobre un archivo")
+print ("=======================\n")
+
+archivo = open(NOMBRE_ARCHIVO, 'r')
+for linea in archivo:
+    print (linea)
+print ("\n")
+archivo.close()
+
+
+print ("\nEliminar un archivo")
+print ("===================")
+
+os.remove(os.getcwd()+"/"+NOMBRE_ARCHIVO)
+print ("\nEliminado archivo desde la ruta: \n\n\t{0}/{1}".format(os.getcwd(), NOMBRE_ARCHIVO))
