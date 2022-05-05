@@ -1,0 +1,39 @@
+import os
+
+print("KLAS")
+print("1. Registro de Usuario(Estudiantes)")
+print("2. Registro de Usuario(Profesores)")
+print ("=======================================")
+
+op=int(input("Introduce alguna opción: "))
+if op==1:
+    NOMBRE_ARCHIVO = 'registro.txt'
+    archivo = open(NOMBRE_ARCHIVO, 'w') # abre el archivo datos.txt
+    n1=input("Introduce tu nombre: ")
+    nacimiento=input("Introduce tu fecha de nacimiento: ")
+    archivo.write(n1)
+    archivo.write("\n\n")
+    archivo.write(nacimiento)
+    archivo.close()
+
+    if NOMBRE_ARCHIVO in os.listdir("."):
+        print ("\nArchivo creado en la ruta: \n\n\t{0}/{1}.format(os.getcwd(), NOMBRE_ARCHIVO")
+    else:
+        print ("El archivo no fue creado!!!\n")
+
+    print ("\n\nLeer un archivo")
+    print ("===============\n")
+
+    archivo = open(NOMBRE_ARCHIVO, 'r')
+    contenido = archivo.read()
+    print (contenido)
+    archivo.close()
+
+    print ("\n\nIterar sobre un archivo")
+    print ("=======================\n")
+
+    archivo = open(NOMBRE_ARCHIVO, 'r')
+    for linea in archivo:
+        print (linea)
+    print ("\n")
+    archivo.close()
