@@ -1,0 +1,43 @@
+Primario=[]
+Secundario=[]
+
+P=int(input("Cuantos alumnos hay en Primaria?:"))
+
+
+for i in range(P):
+    N=input("Ingrese el nombre del alumno de primaria: ")
+    Primario.append(N)
+
+S=int(input("\nCuantos alumnos hay en Secundaria?:"))
+
+
+for i in range(S):
+    M=input("Ingrese el nombre del alumno de secundaria:")
+    Secundario.append(M)
+    
+    
+print("\nNivel Primario: ",Primario)
+print("Nivel Secundario: ",Secundario)
+
+
+
+NoRepetido=[]
+Repetido=[]
+
+
+for element in Primario:
+    if element not in NoRepetido:
+        NoRepetido.append(element)
+    else:
+        Repetido.append(element)
+        
+        
+        
+for element in Secundario:
+    if element not in NoRepetido:
+        NoRepetido.append(element)
+    else:
+        Repetido.append(element)
+        
+print("\nLista de nombres sin repetir: ",NoRepetido)
+print("Nombres que se repiten: ",Repetido)
